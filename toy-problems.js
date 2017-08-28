@@ -158,14 +158,14 @@ findNextPerfectSquare(47);
 
 
 function accum(str) {
-    let newArr = str.toLowerCase().split('')
-
-    for (let i = 0; i < newArr.length; i++) {
-        newArr[i] = newArr[i].toUpperCase() + newArr[i].repeat(i)
+    let newArr=str.toLowerCase().split('')
+    
+    for(let i=0;i<newArr.length;i++) {
+      newArr[i]=newArr[i].toUpperCase()+newArr[i].repeat(i)
     }
-    return newArr
-}
-
+    return newArr.join(',').replace(/,/g , "-")
+  }
+  
 // accum('cwAt')
 
 
@@ -232,3 +232,14 @@ function sumArray(array) {
 }
 
 sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e, 0) : 0
+
+// https://www.codewars.com/kata/convert-number-to-reversed-array-of-digits/train/javascript
+
+function digitize(n) {
+    var answer = n.toString().split('').map(Number).reverse()
+    console.log(answer)
+    return answer;//code here
+  }
+  
+  digitize(348597)
+  
