@@ -158,14 +158,14 @@ findNextPerfectSquare(47);
 
 
 function accum(str) {
-    let newArr=str.toLowerCase().split('')
-    
-    for(let i=0;i<newArr.length;i++) {
-      newArr[i]=newArr[i].toUpperCase()+newArr[i].repeat(i)
+    let newArr = str.toLowerCase().split('')
+
+    for (let i = 0; i < newArr.length; i++) {
+        newArr[i] = newArr[i].toUpperCase() + newArr[i].repeat(i)
     }
-    return newArr.join(',').replace(/,/g , "-")
-  }
-  
+    return newArr.join(',').replace(/,/g, "-")
+}
+
 // accum('cwAt')
 
 
@@ -238,8 +238,26 @@ sumArray = a => a ? a.sort((x, y) => x - y).slice(1, -1).reduce((s, e) => s + e,
 function digitize(n) {
     var answer = n.toString().split('').map(Number).reverse()
     console.log(answer)
-    return answer;//code here
-  }
-  
-  digitize(348597)
-  
+    return answer; //code here
+}
+
+digitize(348597)
+
+// https://www.codewars.com/kata/highest-and-lowest/javascript
+
+function highAndLow(numbers) {
+    var arr = numbers.split(" ")
+    console.log(arr)
+    var min = Math.min.apply(Math, arr)
+    console.log(min)
+    var max = Math.max.apply(Math, arr)
+    console.log(max)
+    return max.toString() + " " + min.toString()
+}
+
+highAndLow("1 2 3 4 5"); // return "5 1"
+
+// function highAndLow(numbers){
+//     numbers = numbers.split(' ').map(Number);
+//     return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+//   }
