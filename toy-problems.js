@@ -261,3 +261,11 @@ highAndLow("1 2 3 4 5"); // return "5 1"
 //     numbers = numbers.split(' ').map(Number);
 //     return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
 //   }
+
+// JadenCase a sentence
+
+String.prototype.toJadenCase = function () { 
+    return this.split(" ").map(function(word){
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(" ");
+  }
