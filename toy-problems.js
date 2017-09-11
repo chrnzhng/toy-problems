@@ -294,3 +294,15 @@ String.prototype.toJadenCase = function () {
           }).join(" ")
           return a
     }
+
+    function squareDigits(num) {
+        var newStr = num.toString();
+        var newArr = newStr.split(''); //may the code be with you
+
+        var result = newArr.map(function (x) {
+            return Math.pow(x, 2);
+
+        });
+        return parseInt(result.join(''));
+
+    }
