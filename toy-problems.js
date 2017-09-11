@@ -306,3 +306,8 @@ String.prototype.toJadenCase = function () {
         return parseInt(result.join(''));
 
     }
+
+    function squareDigits(num){
+  return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
+  
+}
