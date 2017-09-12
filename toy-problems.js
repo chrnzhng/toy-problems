@@ -307,7 +307,32 @@ String.prototype.toJadenCase = function () {
 
     }
 
-    function squareDigits(num){
-  return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
+//     function squareDigits(num){
+//   return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
   
+// }
+
+function XO(str) {
+    var newArr = str.toLowerCase().split("");
+    console.log(newArr);
+    var numOfX = 0;
+    for (var i = 0; i < newArr.length; i++) {
+        if (newArr[i] == "x") {
+            numOfX++;
+        }
+        console.log(numOfX);
+    }
+    var numOfO = 0;
+    for (var j = 0; j < newArr.length; j++) {
+        if (newArr[j] == "o") {
+            numOfO++;
+        }
+        console.log(numOfO); //code here
+
+        if (numOfX == numOfO) {
+            return true;
+        } else return false;
+    }
+
 }
+
