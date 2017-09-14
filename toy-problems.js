@@ -264,52 +264,54 @@ highAndLow("1 2 3 4 5"); // return "5 1"
 
 // JadenCase a sentence
 
-String.prototype.toJadenCase = function () { 
-    return this.split(" ").map(function(word){
-      return word.charAt(0).toUpperCase() + word.slice(1);
+String.prototype.toJadenCase = function () {
+    return this.split(" ").map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
     }).join(" ");
-  }
+}
 
-  function descendingOrder(n){
-    myArray = n.toString().split("").map(function(t){return parseInt(t)})
+function descendingOrder(n) {
+    myArray = n.toString().split("").map(function (t) {
+        return parseInt(t)
+    })
     console.log(myArray)
     myArray.sort((a, b) => b - a)
     console.log(myArray)
     var result = myArray.join('')
     console.log(result)
     return parseInt(result)
-    
-  }
-  
-  descendingOrder(1120)
 
-  
-  var decodeMorse = function(morseCode){
-    
-          var a = morseCode.trim().split("   ").map(function(word){
-              x = word.split(" ").map(function(letter){
-                  return MORSE_CODE[letter]
-              }).join("")
-              return x
-          }).join(" ")
-          return a
-    }
+}
 
-    function squareDigits(num) {
-        var newStr = num.toString();
-        var newArr = newStr.split(''); //may the code be with you
+descendingOrder(1120)
 
-        var result = newArr.map(function (x) {
-            return Math.pow(x, 2);
 
-        });
-        return parseInt(result.join(''));
+var decodeMorse = function (morseCode) {
 
-    }
+    var a = morseCode.trim().split("   ").map(function (word) {
+        x = word.split(" ").map(function (letter) {
+            return MORSE_CODE[letter]
+        }).join("")
+        return x
+    }).join(" ")
+    return a
+}
+
+function squareDigits(num) {
+    var newStr = num.toString();
+    var newArr = newStr.split(''); //may the code be with you
+
+    var result = newArr.map(function (x) {
+        return Math.pow(x, 2);
+
+    });
+    return parseInt(result.join(''));
+
+}
 
 //     function squareDigits(num){
 //   return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
-  
+
 // }
 
 function XO(str) {
@@ -338,4 +340,14 @@ function XO(str) {
 
 function disemvowel(str) {
     return str.replace(/[aeiou]/gi, '');
-  }
+}
+
+function findOdd(A) {
+    var count = 0;
+    for (var i = 0; i < A.length; i++) {
+        if (A[i] % 2 !== 0) {
+            count++
+        } //happy coding!
+        return count;
+    }
+}
