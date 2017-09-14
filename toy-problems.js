@@ -343,11 +343,10 @@ function disemvowel(str) {
 }
 
 function findOdd(A) {
-    var count = 0;
+    //happy coding!
+    var x = 0;
     for (var i = 0; i < A.length; i++) {
-        if (A[i] % 2 !== 0) {
-            count++
-        } //happy coding!
-        return count;
+      x = x ^ A[i];
     }
-}
+    return x;
+  }
