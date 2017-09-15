@@ -130,11 +130,6 @@ function highAndLow(numbers) {
     console.log(newerArr)
     result = newerArr.toString()
 
-
-
-
-
-
 }
 
 //highAndLow("1 2 3 4 5")
@@ -314,39 +309,85 @@ function squareDigits(num) {
 
 // }
 
+//
+// Return True if number of X's equals number of O's
+
+// function XO(str) {
+//     var newArr = str.toLowerCase().split("");
+//     console.log(newArr);
+//     var numOfX = 0;
+//     for (var i = 0; i < newArr.length; i++) {
+//         if (newArr[i] == "x") {
+//             numOfX++;
+//         }
+//         console.log(numOfX);
+//     }
+//     var numOfO = 0;
+//     for (var j = 0; j < newArr.length; j++) {
+//         if (newArr[j] == "o") {
+//             numOfO++;
+//         }
+//         console.log(numOfO); //code here
+
+//         if (numOfX == numOfO) {
+//             return true;
+//         } else return false;
+//     }
+
+// }
+
+//Best practices
+
 function XO(str) {
-    var newArr = str.toLowerCase().split("");
-    console.log(newArr);
-    var numOfX = 0;
-    for (var i = 0; i < newArr.length; i++) {
-        if (newArr[i] == "x") {
-            numOfX++;
-        }
-        console.log(numOfX);
-    }
-    var numOfO = 0;
-    for (var j = 0; j < newArr.length; j++) {
-        if (newArr[j] == "o") {
-            numOfO++;
-        }
-        console.log(numOfO); //code here
+    str = str.toLowerCase().split('');
+    const x = str.filter(x => {
+        return x == 'x'
+    })
+    const o = str.filter(x => {
+        return x == 'o'
+    })
 
-        if (numOfX == numOfO) {
-            return true;
-        } else return false;
-    }
-
+    return x.length == o.length
 }
+
+function XO(str) {
+    let x = str.match(/x/gi);
+    let o = str.match(/o/gi);
+    return (x && x.length) === (o && o.length);
+}
+
+// Remove all the vowels from a string
 
 function disemvowel(str) {
     return str.replace(/[aeiou]/gi, '');
 }
 
+// Find the int odd number of times 
+
 function findOdd(A) {
     //happy coding!
     var x = 0;
     for (var i = 0; i < A.length; i++) {
-      x = x ^ A[i];
+        x = x ^ A[i];
     }
     return x;
-  }
+}
+
+// Counting Sheep..
+
+function countSheeps(arrayOfSheep) {
+    var sheepCount = 0;
+
+    for (var i = 0; i < arrayOfSheep.length; i++) {
+        if (arrayOfSheep[i] === true) {
+            sheepCount++
+        }
+    }
+    return sheepCount; // TODO May the force be with you
+}
+
+// Best practices
+
+function countSheeps(arrayOfSheeps) {
+    return arrayOfSheeps.filter(Boolean).length;
+}
