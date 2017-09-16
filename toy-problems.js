@@ -391,3 +391,18 @@ function countSheeps(arrayOfSheep) {
 function countSheeps(arrayOfSheeps) {
     return arrayOfSheeps.filter(Boolean).length;
 }
+
+// Determine if the passed through integer is a square number
+
+var isSquare = function(n){
+    if (n === 0) {
+    return true;}
+    else 
+   return n > 0 && Math.sqrt(n) % 1 === 0;// fix me
+}
+
+// Best Soln
+
+function isSquare(n) {
+    return Math.sqrt(n) % 1 === 0;
+  }
