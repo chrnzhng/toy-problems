@@ -394,18 +394,18 @@ function countSheeps(arrayOfSheeps) {
 
 // Determine if the passed through integer is a square number
 
-var isSquare = function(n){
+var isSquare = function (n) {
     if (n === 0) {
-    return true;}
-    else 
-   return n > 0 && Math.sqrt(n) % 1 === 0;// fix me
+        return true;
+    } else
+        return n > 0 && Math.sqrt(n) % 1 === 0; // fix me
 }
 
 // Best Soln
 
 function isSquare(n) {
     return Math.sqrt(n) % 1 === 0;
-  }
+}
 
 // Find the shortest word in the string input
 
@@ -418,7 +418,33 @@ function findShort(s) {
 
 // Best Soln.
 
-  function findShort(s){
+function findShort(s) {
     return Math.min.apply(null, s.split(' ').map(w => w.length));
+}
+
+// IQ Test
+
+function iqTest(numbers) {
+    var arrayNum = numbers.split(" ").map(Number);
+    if (arrayNum[0] % 2 !== arrayNum[1] % 2 && arrayNum[0] % 2 !== arrayNum[2] % 2) {
+        return 1;
+    } else {
+        for (var i = 1; i < arrayNum.length; i++) {
+            if (arrayNum[i] % 2 !== arrayNum[0] % 2) {
+                return (i + 1);
+            }
+        }
+    }
+}
+
+//Best Soln:
+
+function iqTest(numbers){
+    numbers = numbers.split(" ").map(function(el){return parseInt(el)});
+    
+    var odd = numbers.filter(function(el){ return el % 2 === 1});
+    var even = numbers.filter(function(el){ return el % 2 === 0});
+    
+    return odd.length < even.length ? (numbers.indexOf(odd[0]) + 1) : (numbers.indexOf(even[0]) + 1);
   }
-  
+
